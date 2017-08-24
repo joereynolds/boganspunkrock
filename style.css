@@ -46,6 +46,7 @@ input, textarea {
     display: block;
     padding: 1em;
 }
+
 [type="submit"] {
     border: none;
     background: rgba(255, 255, 255, 0.2);
@@ -62,7 +63,6 @@ input, textarea {
   margin-bottom: .5em;
 }
 
-
 @media (min-width: 768px) {
     main {
         padding: 2em;
@@ -70,6 +70,4 @@ input, textarea {
     .gig-location-details {
         text-align: right;
     }
-
 }
-
