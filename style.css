@@ -14,31 +14,49 @@ html {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 main {
-  width: 500px;
-  margin: auto;
   padding: 2em;
 }
 
 header {
-  width: 500px;
-  margin: auto;
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav {
+  width: 500px; /* extract these 3 rules if necessary into a 'centered' class */
+  margin: auto;
+  padding: 2em;
 }
 
 section + section {
   margin-bottom: 2em;
 }
 
+input, textarea {
+    width: 100%;
+    display: block;
+    padding: 1em;
+}
+
+.group {
+    margin-bottom: 1em;
+}
+
 .gig {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 1em;
-}
-
-.gig + .gig {
-  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .gig-location-details {
-  float: right;
+    text-align: right;
 }
