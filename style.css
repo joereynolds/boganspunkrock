@@ -7,6 +7,9 @@ body, html {
   box-sizing: border-box;
 }
 
+img {
+  width: 170px;
+}
 html {
   background: #2d2d2d;
   color: white;
@@ -32,7 +35,6 @@ header {
 }
 
 nav {
-  width: 500px; /* extract these 3 rules if necessary into a 'centered' class */
   margin: auto;
   padding: 2em;
 }
@@ -63,6 +65,14 @@ input, textarea {
   margin-bottom: .5em;
 }
 
+#loading-spinner {
+  right: 0;
+  left: 0;
+  bottom: 50%;
+  position: absolute;
+  margin: auto;
+}
+
 @media (min-width: 768px) {
     main {
         padding: 2em;
@@ -70,4 +80,11 @@ input, textarea {
     .gig-location-details {
         text-align: right;
     }
+}
+
+@media handheld, only screen and (max-width: 767px) {
+  .grid {
+    padding: 0 !important;
+  }
+
 }
