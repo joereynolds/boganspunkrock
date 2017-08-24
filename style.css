@@ -24,7 +24,7 @@ a:hover {
 }
 
 main {
-  padding: 2em;
+  padding: 1em;
 }
 
 header {
@@ -38,13 +38,18 @@ nav {
 }
 
 section + section {
-  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 input, textarea {
     width: 100%;
     display: block;
     padding: 1em;
+}
+[type="submit"] {
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
 .group {
@@ -59,6 +64,9 @@ input, textarea {
 
 
 @media (min-width: 768px) {
+    main {
+        padding: 2em;
+    }
     .gig-location-details {
         text-align: right;
     }

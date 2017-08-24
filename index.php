@@ -5,9 +5,11 @@
 
     <body>
       <?php include './sections/header.htm' ?>
-      <main class="grid grid-pad">
-        <?php include './pages/home.htm' ?>
-        <?php include './pages/contact.htm' ?>
+      <main>
+        <div class="grid">
+          <?php include './pages/home.htm' ?>
+          <?php include './pages/contact.htm' ?>
+        </div>
       </main>
     </body>
 </html>
