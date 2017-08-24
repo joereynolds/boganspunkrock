@@ -57,6 +57,11 @@ input, textarea {
   margin-bottom: .5em;
 }
 
-.gig-location-details {
-    text-align: right;
+
+@media (min-width: 768px) {
+    .gig-location-details {
+        text-align: right;
+    }
+
 }
+
