@@ -1,0 +1,90 @@
+/**reset**/
+body, html {
+  margin: 0;
+  padding: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  width: 170px;
+}
+html {
+  background: #2d2d2d;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+  padding: 1em;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav {
+  margin: auto;
+  padding: 2em;
+}
+
+section + section {
+  margin-top: 2em;
+}
+
+input, textarea {
+    width: 100%;
+    display: block;
+    padding: 1em;
+}
+
+[type="submit"] {
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.group {
+    margin-bottom: 1em;
+}
+
+.gig {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1em;
+  margin-bottom: .5em;
+}
+
+#loading-spinner {
+  right: 0;
+  left: 0;
+  bottom: 50%;
+  position: absolute;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 2em;
+    }
+    .gig-location-details {
+        text-align: right;
+    }
+}
+
+@media handheld, only screen and (max-width: 767px) {
+  .grid {
+    padding: 0 !important;
+  }
+
+}
