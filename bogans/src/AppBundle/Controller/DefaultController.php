@@ -2,9 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Article;
+use AppBundle\Entity\Gig;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManagerInterface;
 
 class DefaultController extends Controller
 {
@@ -13,8 +16,12 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+        $repository = $this->getDoctrine()->getRepository(Gig::class);
+        $gigs = $repository->findAll();
+
         return $this->render('default/index.html.twig', [
-            'page' => 'home'
+            'page' => 'home',
+            'gigs' => $gigs
         ]);
     }
 
@@ -43,12 +50,12 @@ class DefaultController extends Controller
      */
     public function newsAction()
     {
+        $repository = $this->getDoctrine()->getRepository(Article::class);
+        $articles = $repository->findAll();
+
         return $this->render('default/index.html.twig', [
-            'page' => 'news'
+            'page' => 'news',
+            'articles' => $articles
         ]);
     }
-
-
-
-
 }

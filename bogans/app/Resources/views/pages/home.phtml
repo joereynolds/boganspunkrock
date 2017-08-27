@@ -14,79 +14,28 @@
     <section class="gigs">
         <h1>Upcoming Shows</h1>
 
-        <div class="gig">
-          <div class="grid">
-            <div class="col-4-12">
-                <div class="gig-date-and-venue">
-                    <time>9th September 2017</time>
+        {% for gig in gigs %}
+            <div class="gig">
+              <div class="grid">
+                <div class="col-4-12">
+                    <div class="gig-date-and-venue">
+                        <time>{{ gig.date | date('l dS F Y') }}</time>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-4-12">
-                <span>Supporting
-					<a href="http://vicesquad.co.uk/punkrock/">
-						Vice Squad
-					</a>
-				</span>
-            </div>
-
-            <div class="col-4-12">
-                <div class="gig-location-details">
-                    <span>Mcleans Pub.</span>
-                    <span>Deeside, UK</span>
+                <div class="col-4-12">
+                    <span>
+                        <strong>{{ gig.title }}</strong>
+                    </span>
                 </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="gig">
-          <div class="grid">
-            <div class="col-4-12">
-                <div class="gig-date-and-venue">
-                    <time>20th October 2017</time>
+                <div class="col-4-12">
+                    <div class="gig-location-details">
+                        <span>{{ gig.location }}</span>
+                    </div>
                 </div>
+              </div>
             </div>
-
-            <div class="col-4-12">
-                <span>Supporting
-					<a href="http://www.sexpistolsexperience.co.uk/">
-						The Sex Pistols Experience
-					</a>
-				</span>
-            </div>
-
-            <div class="col-4-12 push-right">
-                <div class="gig-location-details">
-                    <span>Tivoli.</span>
-                    <span>Buckley, UK</span>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gig">
-          <div class="grid">
-            <div class="col-4-12">
-                <div class="gig-date-and-venue">
-                    <time>23rd November 2017</time>
-                </div>
-            </div>
-
-            <div class="col-4-12">
-                <span>Supporting
-					<a href="http://wonkunit.com/">
-						Wonk Unit
-					</a>
-				</span>
-            </div>
-
-            <div class="col-4-12">
-                <div class="gig-location-details">
-                    <span>The Live Rooms.</span>
-                    <span>Chester, UK</span>
-                </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
     </section>
