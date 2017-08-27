@@ -36,7 +36,8 @@ class DefaultController extends Controller
             mail(
                 'boganspunkrock@gmail.com',
                 "You've got mail from the site!",
-                $request->request->get('text')
+                $request->request->get('text'),
+                'From: bogans.uk'
             );
         }
 
