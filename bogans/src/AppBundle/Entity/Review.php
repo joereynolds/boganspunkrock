@@ -18,14 +18,28 @@ class Review
     private $id;
 
     /**
+     * This is the main headline
      * @ORM\Column(type="text")
      */
     private $title;
 
     /**
+     * The name of the reviewer
      * @ORM\Column(type="string", length=100)
      */
     private $source;
+
+    /**
+     * The url of the review
+     * @ORM\Column(type="string")
+     */
+    private $url;
+
+    /**
+     * The entire review text
+     * @ORM\Column(type="text")
+     */
+    private $fullText;
 
     public function getTitle()
     {
@@ -36,4 +50,16 @@ class Review
     {
         return $this->source;
     }
+
+    public function getFullText()
+    {
+        return $this->fullText;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+
 }

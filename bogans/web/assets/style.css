@@ -1,5 +1,5 @@
 /**reset**/
-body, html, p {
+blockquote, body, html, p {
   margin: 0;
   padding: 0;
 }
@@ -17,6 +17,9 @@ html {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*Some colors
+ #5cff96
+*/
 a {
     color: white;
     text-decoration: none;
@@ -29,6 +32,10 @@ a:hover {
 
 main {
   padding: 1em;
+}
+
+main a {
+    color: #5cff96;
 }
 
 header {
@@ -77,6 +84,67 @@ article h1 time {
     font-size: .75rem;
     font-weight: 100;
     float: right;
+}
+
+blockquote {
+    border-left: 2px solid #5cff96;;
+    font-style: italic;
+    padding-left: 1em;
+}
+
+blockquote + blockquote {
+    margin-top: 1em;
+}
+
+.hero-image {
+    height: 250px;
+    position: relative;
+    background-color: #5cff96;
+}
+
+.hero-image-header {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+}
+.image-collage {
+    opacity: 0.05;
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+
+}
+
+.image-collage .image {
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-box-flex: 1;   /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: 1;       /* Safari 6.1+. iOS 7.1+, BB10 */
+    -ms-flex: 1;           /* IE 10 */
+    flex: 1;               /* NEW, Spec - Firefox, Chrome, Opera */
+
+}
+
+.nav-logo {
+    border-radius: 50px;
+    width: 50px;
+}
+
+.review-source {
+    margin-top: .5em;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.review-home {
+    font-size: 1.5em;
+    font-style: italic;
 }
 
 .group {

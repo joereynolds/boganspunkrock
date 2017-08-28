@@ -18,10 +18,12 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $gigs = $this->findAllEntities(Gig::class);
+        $reviews = $this->findAllEntities(Review::class);
 
         return $this->render('default/index.html.twig', [
             'page' => 'home',
-            'gigs' => $gigs
+            'gigs' => $gigs,
+            'review' => $reviews[array_rand($reviews)]
         ]);
     }
 

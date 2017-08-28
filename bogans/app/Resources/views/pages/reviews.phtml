@@ -4,7 +4,7 @@
     {% for review in reviews %}
         <blockquote>
             {{ review.title }}
-            <div class="review-source">{{ review.source }}</div>
+            <div class="review-source"> <a href="{{ review.url }}">{{ review.source }}</a></div>
         </blockquote>
     {% endfor %}
 
