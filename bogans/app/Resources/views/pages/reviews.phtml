@@ -1,0 +1,11 @@
+<section>
+    <h1>Reviews</h1>
+
+    {% for review in reviews %}
+        <blockquote>
+            {{ review.title }}
+            <div class="review-source">{{ review.source }}</div>
+        </blockquote>
+    {% endfor %}
+
+</section>

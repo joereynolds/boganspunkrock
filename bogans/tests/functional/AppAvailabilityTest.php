@@ -24,6 +24,7 @@ class AppAvailabilityTest extends WebTestCase
             ['/'],
             ['news'],
             ['contact'],
+            ['reviews'],
         ];
     }
 }

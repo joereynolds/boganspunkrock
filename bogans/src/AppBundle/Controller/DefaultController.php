@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Gig;
+use AppBundle\Entity\Review;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,8 +17,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $repository = $this->getDoctrine()->getRepository(Gig::class);
-        $gigs = $repository->findAll();
+        $gigs = $this->findAllEntities(Gig::class);
 
         return $this->render('default/index.html.twig', [
             'page' => 'home',
@@ -50,12 +50,30 @@ class DefaultController extends Controller
      */
     public function newsAction()
     {
-        $repository = $this->getDoctrine()->getRepository(Article::class);
-        $articles = $repository->findAll();
+        $articles = $this->findAllEntities(Article::class);
 
         return $this->render('default/index.html.twig', [
             'page' => 'news',
             'articles' => $articles
         ]);
+    }
+
+    /**
+     * @Route("/reviews")
+     */
+    public function reviewAction()
+    {
+        $reviews = $this->findAllEntities(Review::class);
+
+        return $this->render('default/index.html.twig', [
+            'page' => 'reviews',
+            'reviews' => $reviews
+        ]);
+    }
+
+    private function findAllEntities($entity)
+    {
+        $repository = $this->getDoctrine()->getRepository($entity);
+        return $repository->findAll();
     }
 }
