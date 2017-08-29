@@ -43,9 +43,16 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+header nav {
+  padding: 0.5em;
+}
+
+footer nav {
+  padding: 1em;
+}
+
 nav {
   margin: auto;
-  padding: 1em;
 }
 
 nav a + a {
