@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
+use Mailgun\Mailgun;
 
 class DefaultController extends Controller
 {
@@ -35,11 +36,16 @@ class DefaultController extends Controller
         $request = Request::createFromGlobals();
 
         if ($request->request->get('email')) {
-            mail(
-                'boganspunkrock@gmail.com',
-                "You've got mail from the site!",
-                $request->request->get('text')
-            );
+
+            $apiKey = $this->getParameter('mailgun_key');
+
+            $mailGun = MailGun::create($apiKey);
+            $mailGun->messages()->send('bogans.uk', [
+                'from' => 'contactform@bogans.uk',
+                'to' => 'boganspunkrock@gmail.com',
+                'subject' => "You've got mail from the site!",
+                'text' => $request->request->get('text')
+            ]);
         }
 
         return $this->render('default/index.html.twig', [
