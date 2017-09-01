@@ -7,16 +7,14 @@ blockquote, body, html, p {
   box-sizing: border-box;
 }
 
+img {
+  width: 170px;
+}
 html {
   background: #2d2d2d;
-  line-height: 1.5;
   color: white;
   font-size: 1rem;
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-img {
-    width: 170px;
 }
 
 html, body {
@@ -24,20 +22,17 @@ html, body {
 }
 
 body {
-    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     flex-direction: column;
 }
 
 main {
-    -webkit-box-flex: 1 0 auto;   /* OLD - iOS 6-, Safari 3.1-6 */
-    -webkit-flex: 1 0 auto;       /* Safari 6.1+. iOS 7.1+, BB10 */
-    -ms-flex: 1 0 auto;           /* IE 10 */
-    flex: 1 0 auto;               /* NEW, Spec - Firefox, Chrome, Opera */
+    flex: 1 0 auto;
 }
 
+/*Some colors
+ #5cff96
+*/
 a {
     color: white;
     text-decoration: none;
@@ -52,7 +47,7 @@ main {
   padding: 1em;
 }
 
-main a, main time {
+main a {
     color: #5cff96;
 }
 
@@ -75,6 +70,7 @@ nav {
 
 nav a + a {
   margin-left: 1em;
+
 }
 
 p + p {
@@ -86,8 +82,8 @@ section + section {
 }
 
 input, textarea {
-    display: block;
     width: 100%;
+    display: block;
     padding: 1em;
 }
 
@@ -95,10 +91,6 @@ input, textarea {
     border: none;
     background: rgba(255, 255, 255, 0.2);
     color: white;
-}
-
-article {
-    font-size: 1.3rem;
 }
 
 article h1 {
@@ -109,9 +101,10 @@ article img {
     width: 100%;
 }
 
-article time {
+article h1 time {
     font-size: .75rem;
-    display: block;
+    font-weight: 100;
+    float: right;
 }
 
 blockquote {
@@ -145,6 +138,7 @@ blockquote + blockquote {
     display: -ms-flexbox;  /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
+
 }
 
 .image-collage .image {
@@ -155,6 +149,7 @@ blockquote + blockquote {
     -webkit-flex: 1;       /* Safari 6.1+. iOS 7.1+, BB10 */
     -ms-flex: 1;           /* IE 10 */
     flex: 1;               /* NEW, Spec - Firefox, Chrome, Opera */
+
 }
 
 .nav-logo {
@@ -195,10 +190,6 @@ blockquote + blockquote {
     main {
         padding: 2em;
     }
-
-    article time {
-        float: right;
-    }
     /**
      * crappy hack, use flex to vertically align
      * and then it'll be in the dom and honour
@@ -217,4 +208,5 @@ blockquote + blockquote {
   .grid {
     padding: 0 !important;
   }
+
 }
