@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Gig
 {
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -18,15 +19,26 @@ class Gig
     private $id;
 
     /**
+     * i.e. "Supporting" or "With" or "Playing with"
      * @ORM\Column(type="string", length=100)
      */
-    private $title;
+    private $prefix;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $artist;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
     private $location;
 
+    /**
+     * URL of the artist that is also playing
+     * @ORM\Column(type="string")
+     */
+    private $url;
     /**
      * @ORM\Column(type="date", length=100)
      */
@@ -42,8 +54,18 @@ class Gig
         return $this->location;
     }
 
-    public function getTitle()
+    public function getArtist()
     {
-        return $this->title;
+        return $this->artist;
+    }
+
+    public function getPrefix()
+    {
+        return $this->prefix;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

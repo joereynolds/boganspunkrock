@@ -22,6 +22,7 @@
         <h1>Upcoming Shows</h1>
 
         {% for gig in gigs %}
+
             <div class="gig">
               <div class="grid">
                 <div class="col-4-12">
@@ -32,7 +33,8 @@
 
                 <div class="col-4-12">
                     <span>
-                        <strong>{{ gig.title }}</strong>
+                        {{ gig.prefix }}
+                        <a href="{{ gig.url }}">{{ gig.artist}}</a>
                     </span>
                 </div>
 
