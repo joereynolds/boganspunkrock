@@ -79,7 +79,7 @@ nav {
   margin: auto;
 }
 
-nav a + a {
+nav * + * {
   margin-left: 1em;
 
 }
