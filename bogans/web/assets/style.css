@@ -3,6 +3,7 @@ blockquote, body, html, p {
   margin: 0;
   padding: 0;
 }
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -10,6 +11,7 @@ blockquote, body, html, p {
 img {
   width: 170px;
 }
+
 html {
   background: #2d2d2d;
   color: white;
@@ -62,6 +64,11 @@ article time {
 
 header nav {
   padding: 0.5em;
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  align-items: center;
 }
 
 footer nav {
