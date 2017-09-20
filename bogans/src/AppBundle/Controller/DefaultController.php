@@ -2,10 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Repository\Gig as GigRepository;
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Gig;
 use AppBundle\Entity\Review;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,12 +20,17 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $gigs = $this->findAllEntities(Gig::class);
+        $gigRepository = $this->getDoctrine()->getRepository(Gig::class);
+
+        $gigs = $gigRepository->findUpcomingGigs();
+        $pastGigs = $gigRepository->findPastGigs();
+
         $reviews = $this->findAllEntities(Review::class);
 
         return $this->render('default/index.html.twig', [
             'page' => 'home',
             'gigs' => $gigs,
+            'pastGigs' => $pastGigs,
             'review' => $reviews[array_rand($reviews)]
         ]);
     }

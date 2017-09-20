@@ -48,3 +48,34 @@
         {% endfor %}
 
     </section>
+
+    <section class="gigs">
+        <h1>Past Shows</h1>
+
+        {% for gig in pastGigs %}
+
+            <div class="gig">
+              <div class="grid">
+                <div class="col-4-12">
+                    <div class="gig-date-and-venue">
+                        <time>{{ gig.date | date('l dS F Y') }}</time>
+                    </div>
+                </div>
+
+                <div class="col-4-12">
+                    <span>
+                        {{ gig.prefix }}
+                        <a href="{{ gig.url }}">{{ gig.artist}}</a>
+                    </span>
+                </div>
+
+                <div class="col-4-12">
+                    <div class="gig-location-details">
+                        <span>{{ gig.location }}</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+
+    </section>
