@@ -14,7 +14,9 @@ class Gig extends EntityRepository
         $today = new DateTime();
 
         $criteria = new Criteria();
-        $criteria->where($criteria->expr()->lt('date', $today));
+        $criteria
+            ->where($criteria->expr()->lt('date', $today))
+            ->orderBy(['date' => 'DESC']);
 
         return $this->matching($criteria);
     }
@@ -24,7 +26,9 @@ class Gig extends EntityRepository
         $yesterday = (new DateTime())->modify('-1 day');
 
         $criteria = new Criteria();
-        $criteria->where($criteria->expr()->gt('date', $yesterday));
+        $criteria
+            ->where($criteria->expr()->gt('date', $yesterday))
+            ->orderBy(['date' => 'ASC']);
 
         return $this->matching($criteria);
     }
