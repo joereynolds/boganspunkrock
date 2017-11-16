@@ -86,6 +86,16 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/admin")
+     */
+    public function adminAction()
+    {
+        return $this->render('default/index.html.twig', [
+            'page' => 'admin'
+        ]);
+    }
+
     private function findAllEntities($entity)
     {
         $repository = $this->getDoctrine()->getRepository($entity);
