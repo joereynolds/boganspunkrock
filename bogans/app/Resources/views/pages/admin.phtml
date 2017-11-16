@@ -1,1 +1,56 @@
-This is the admin page where you can do sick shit.
+<section>
+    <h1>Edit News</h1>
+    {% for article in articles %}
+
+        <h2>{{ article.title }}</h2>
+        <img src="/assets/{{ article.image }}">
+        <br>
+        <label>Title</label>
+        <input type="text" value="{{ article.title }}">
+
+        <label>Date</label>
+        <input type="date" value="{{ article.date | date('Y-m-d') }}">
+        <textarea>{{ article.text | nl2br }}</textarea>
+        <input type="submit">
+        <hr>
+    {% endfor %}
+</section>
+
+<section>
+    <h1>Edit Gigs</h1>
+        {% for gig in gigs %}
+            <h2>{{ gig.location }}</h2>
+
+            <label>Date</label>
+            <input type="date" value="{{ gig.date | date('Y-m-d') }}">
+
+            <label>Prefix</label>
+            <input type="text" value="{{ gig.prefix }}">
+
+            <label>Artist</label>
+            <input type="text" value="{{ gig.artist }}">
+
+            <label>URL</label>
+            <input type="text" value="{{ gig.url }}">
+
+            <label>Location</label>
+            <input type="text" value="{{ gig.location }}">
+            <input type="submit">
+        {% endfor %}
+</section>
+
+<section>
+    <h1>Edit Reviews</h1>
+    {% for review in reviews %}
+        <h2>{{ review.title }}</h2>
+        <label>Title</label>
+        <input type="text" value="{{ review.title }}">
+
+        <label>URL</label>
+        <input type="url" value="{{ review.url }}">
+
+        <label>Source</label>
+        <input type="text" value="{{ review.source }}">
+        <input type="submit">
+    {% endfor %}
+</section>

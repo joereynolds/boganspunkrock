@@ -92,7 +92,10 @@ class DefaultController extends Controller
     public function adminAction()
     {
         return $this->render('default/index.html.twig', [
-            'page' => 'admin'
+            'page' => 'admin',
+            'gigs' => $this->findAllEntities(Gig::class),
+            'reviews' => $this->findAllEntities(Review::class),
+            'articles' => $this->findAllEntities(Article::class)
         ]);
     }
 
