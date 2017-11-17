@@ -25,13 +25,16 @@ class DefaultController extends Controller
         $gigs = $gigRepository->findUpcomingGigs();
         $pastGigs = $gigRepository->findPastGigs();
 
+        $articles = $this->findAllEntities(Article::class);
+
         $reviews = $this->findAllEntities(Review::class);
 
         return $this->render('default/index.html.twig', [
             'page' => 'home',
             'gigs' => $gigs,
             'pastGigs' => $pastGigs,
-            'review' => $reviews[array_rand($reviews)]
+            'review' => $reviews[array_rand($reviews)],
+            'articles' => $articles
         ]);
     }
 

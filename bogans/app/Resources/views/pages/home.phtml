@@ -17,7 +17,21 @@
         </iframe>
       </div>
     </div>
+</section>
 
+<section>
+    <h1>News</h1>
+
+    {% for article in articles | slice (0,3) %}
+        <article>
+            <h1>
+                {{ article.title }}
+                <a href="/news" class="subtext">Read More</a>
+            </h1>
+        </article>
+    {% endfor %}
+
+</section>
     <section class="gigs">
         <h1>Upcoming Shows</h1>
 
