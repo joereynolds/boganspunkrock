@@ -32,6 +32,10 @@ main {
     flex: 1 0 auto;
 }
 
+.grid {
+    max-width: 900px;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -63,15 +67,19 @@ header {
 
 header nav {
   padding: 0.5em;
+}
+
+.nav-container {
   display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;  /* TWEENER - IE 10 */
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   display: flex;
   align-items: center;
+
 }
 
 footer nav {
-  padding: 1em;
+  padding: 1em 0;
 }
 
 nav {
