@@ -12,7 +12,6 @@ class AppAvailabilityTest extends WebTestCase
         $this->client = self::createClient();
     }
 
-
     /**
      * @dataProvider urlProvider
      */
