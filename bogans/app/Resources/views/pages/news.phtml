@@ -3,6 +3,7 @@
 
     {% for article in articles %}
         <article>
+            <a name="{{ article.title }}"></a>
             <h1>
                 {{ article.title }}
                 <time class="subtext">{{ article.date | date('l dS F Y') }}</time>
@@ -12,7 +13,7 @@
                     <img src="/assets/{{ article.image }}">
                 </div>
                 <div class="col-8-12">
-                    {{ article.text | nl2br }}
+                    <p>{{ article.text | nl2br }}</p>
                 </div>
             </div>
         </article>
