@@ -32,8 +32,6 @@ main {
     flex: 1 0 auto;
 }
 
-/*Some colors
-*/
 a {
     color: white;
     text-decoration: none;
@@ -57,9 +55,10 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-article time {
-  font-size: .75rem;
-  color: #5cff96;
+.subtext {
+    display: block;
+    font-size: .75rem;
+    color: #5cff96;
 }
 
 header nav {
@@ -110,10 +109,6 @@ article h1 {
 
 article img {
     width: 100%;
-}
-
-article time {
-    display: block;
 }
 
 blockquote {
@@ -212,7 +207,7 @@ blockquote + blockquote {
         text-align: right;
     }
 
-    article time {
+    .subtext {
         float: right;
     }
 }

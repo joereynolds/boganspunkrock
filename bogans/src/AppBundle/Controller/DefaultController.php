@@ -99,6 +99,20 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/gigs")
+     */
+    public function pastGigsAction()
+    {
+        $gigRepository = $this->getDoctrine()->getRepository(Gig::class);
+        $pastGigs = $gigRepository->findPastGigs();
+
+        return $this->render('default/index.html.twig', [
+            'page' => 'gigs',
+            'gigs' => $pastGigs
+        ]);
+    }
+
     private function findAllEntities($entity)
     {
         $repository = $this->getDoctrine()->getRepository($entity);

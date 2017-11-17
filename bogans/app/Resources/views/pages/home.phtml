@@ -50,9 +50,9 @@
     </section>
 
     <section class="gigs">
-        <h1>Past Shows</h1>
+        <h1>Past Shows <a class="subtext" href="/gigs">See all past gigs</a></h1>
 
-        {% for gig in pastGigs %}
+        {% for gig in pastGigs | slice(0, 3) %}
 
             <div class="gig">
               <div class="grid">
