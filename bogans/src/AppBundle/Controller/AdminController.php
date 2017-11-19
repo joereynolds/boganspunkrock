@@ -9,10 +9,13 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
+use AppBundle\Form\GigType;
+
 use AppBundle\Entity\Gig;
 
 class AdminController extends Controller
 {
+
     /**
      * @Route("/admin")
      */
@@ -21,13 +24,9 @@ class AdminController extends Controller
         $gig = new Gig();
         $manager = $this->getDoctrine()->getManager();
 
-        $form = $this->generateGigForm($manager, null);
-
+        $form = $this->createForm(GigType::class, $gig);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->persistSubmittedGig($manager, $form);
-        }
+        $this->submitForm($manager, $form);
 
         return $this->render('default/index.html.twig', [
             'page' => 'admin',
@@ -44,12 +43,9 @@ class AdminController extends Controller
         $manager = $this->getDoctrine()->getManager();
         $gig = $manager->getRepository(Gig::class)->find($id);
 
-        $form = $this->generateGigForm($manager, $id);
+        $form = $this->createForm(GigType::class, $gig);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->persistSubmittedGig($manager, $form);
-        }
+        $this->submitForm($manager, $form);
 
         return $this->render('default/index.html.twig', [
             'page' => 'admin-gigs',
@@ -57,33 +53,13 @@ class AdminController extends Controller
         ]);
     }
 
-    private function generateGigForm($manager, $id)
+    private function submitForm($manager, $form)
     {
-        $gig = new Gig();
-
-        //If there's an id, load our gig object instead
-        //of an empty one
-        if ($id) {
-            $gig = $manager->getRepository(Gig::class)->find($id);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $gig = $form->getData();
+            $manager->persist($gig);
+            $manager->flush();
         }
-
-        $form = $this->createFormBuilder($gig)
-            ->add('date', DateType::class)
-            ->add('location', TextType::class)
-            ->add('artist', TextType::class)
-            ->add('prefix', TextType::class)
-            ->add('url', TextType::class)
-            ->add('save', SubmitType::class)
-            ->getForm();
-
-        return $form;
-    }
-
-    private function persistSubmittedGig($manager, $form)
-    {
-        $gig = $form->getData();
-        $manager->persist($gig);
-        $manager->flush();
     }
 
     private function findAllEntities($entity)
