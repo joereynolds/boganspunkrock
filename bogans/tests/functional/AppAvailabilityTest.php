@@ -21,10 +21,21 @@ class AppAvailabilityTest extends WebTestCase
         $this->assertTrue($this->client->getResponse()->isSuccessful());
     }
 
-    public function testAdminPageRedirects()
+    /**
+     * @dataProvider restrictedUrlProvider
+     */
+    public function testRestrictedPagesRedirect($url)
     {
-        $this->client->request('GET', '/admin');
+        $this->client->request('GET', $url);
         $this->assertTrue($this->client->getResponse()->isRedirect());
+    }
+
+    public function restrictedUrlProvider()
+    {
+        return [
+            ['/admin'],
+            ['/admin/gigs/1000']
+        ];
     }
 
     public function urlProvider()
