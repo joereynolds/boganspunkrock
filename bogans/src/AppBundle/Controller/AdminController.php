@@ -21,24 +21,14 @@ class AdminController extends Controller
     public function adminAction(Request $request)
     {
         $gig = new Gig();
+        $manager = $this->getDoctrine()->getManager();
 
-        $form = $this->createFormBuilder($gig)
-            ->add('date', DateType::class)
-            ->add('url', TextType::class)
-            ->add('location', TextType::class)
-            ->add('artist', TextType::class)
-            ->add('prefix', TextType::class)
-            ->add('save', SubmitType::class)
-            ->getForm();
+        $form = $this->generateGigForm($manager, null);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $newGig = $form->getData();
-
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($newGig);
-            $manager->flush();
+            $this->persistSubmittedGig($manager, $form);
         }
 
         return $this->render('default/index.html.twig', [
@@ -54,8 +44,30 @@ class AdminController extends Controller
     public function adminGigUpdateAction(Request $request, $id)
     {
         $manager = $this->getDoctrine()->getManager();
-
         $gig = $manager->getRepository(Gig::class)->find($id);
+
+        $form = $this->generateGigForm($manager, $id);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->persistSubmittedGig($manager, $form);
+        }
+
+        return $this->render('default/index.html.twig', [
+            'page' => 'admin-gigs',
+            'form' => $form->createView(),
+        ]);
+    }
+
+    private function generateGigForm($manager, $id)
+    {
+        $gig = new Gig();
+
+        //If there's an id, load our gig object instead
+        //of an empty one
+        if ($id) {
+            $gig = $manager->getRepository(Gig::class)->find($id);
+        }
 
         $form = $this->createFormBuilder($gig)
             ->add('date', DateType::class)
@@ -66,18 +78,14 @@ class AdminController extends Controller
             ->add('save', SubmitType::class)
             ->getForm();
 
-        $form->handleRequest($request);
+        return $form;
+    }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $gig = $form->getData();
-            $manager->persist($gig);
-            $manager->flush();
-        }
-
-        return $this->render('default/index.html.twig', [
-            'page' => 'admin-gigs',
-            'form' => $form->createView(),
-        ]);
+    private function persistSubmittedGig($manager, $form)
+    {
+        $gig = $form->getData();
+        $manager->persist($gig);
+        $manager->flush();
     }
 
     private function findAllEntities($entity)
