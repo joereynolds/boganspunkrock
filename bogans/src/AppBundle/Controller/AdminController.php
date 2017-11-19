@@ -10,8 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use AppBundle\Entity\Gig;
-use AppBundle\Entity\Review;
-use AppBundle\Entity\Article;
 
 class AdminController extends Controller
 {
