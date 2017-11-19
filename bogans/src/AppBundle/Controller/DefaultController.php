@@ -90,19 +90,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/admin")
-     */
-    public function adminAction()
-    {
-        return $this->render('default/index.html.twig', [
-            'page' => 'admin',
-            'gigs' => $this->findAllEntities(Gig::class),
-            'reviews' => $this->findAllEntities(Review::class),
-            'articles' => $this->findAllEntities(Article::class)
-        ]);
-    }
-
-    /**
      * @Route("/gigs")
      */
     public function pastGigsAction()

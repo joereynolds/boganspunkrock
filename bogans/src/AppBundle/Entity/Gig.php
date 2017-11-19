@@ -44,6 +44,11 @@ class Gig
      */
     private $date;
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getDate()
     {
         return $this->date;
@@ -67,5 +72,30 @@ class Gig
     public function getUrl()
     {
         return $this->url;
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
+
+    public function setArtist($artist)
+    {
+        $this->artist = $artist;
+    }
+
+    public function setPrefix($prefix)
+    {
+        $this->prefix = $prefix;
+    }
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
     }
 }

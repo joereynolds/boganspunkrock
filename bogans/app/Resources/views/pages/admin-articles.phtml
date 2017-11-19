@@ -1,0 +1,17 @@
+<section>
+    <h1>Edit Articles</h1>
+    {% for article in articles %}
+
+        <h2>{{ article.title }}</h2>
+        <img src="/assets/{{ article.image }}">
+        <br>
+        <label>Title</label>
+        <input type="text" value="{{ article.title }}">
+
+        <label>Date</label>
+        <input type="date" value="{{ article.date | date('Y-m-d') }}">
+        <textarea>{{ article.text | nl2br }}</textarea>
+        <input type="submit">
+        <hr>
+    {% endfor %}
+</section>
