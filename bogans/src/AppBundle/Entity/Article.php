@@ -37,6 +37,11 @@ class Article
      */
     private $text;
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getImage()
     {
         return $this->image;

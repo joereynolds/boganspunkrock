@@ -1,12 +1,15 @@
 <section>
     <h1>Gigs</h1>
+    <h2><a href="/admin/gigs">Add a new gig</a></h2>
     {% for gig in gigs %}
         <div><a href="/admin/gigs/{{ gig.id }}">{{ gig.location }}</a></div>
     {% endfor %}
-
-    <h2>Add a new gig</h2>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
 </section>
 
+<!-- <section> -->
+<!--     <h1>News</h1> -->
+<!--     <h2><a href="/admin/news">Add a news article</a></h2> -->
+<!--     {% for article in articles %} -->
+<!--         <div><a href="/admin/articles/{{ article.id }}">{{ article.title }}</a></div> -->
+<!--     {% endfor %} -->
+<!-- </section> -->
