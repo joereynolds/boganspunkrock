@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/var/www/bogans
-    ports: 
+    ports:
       - "5678:80"
     restart: always
   mysql:
@@ -15,5 +15,8 @@ services:
       context: ./docker/mysql/
       dockerfile: Dockerfile
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: symfony
 
 
