@@ -29,11 +29,17 @@ class DefaultController extends Controller
 
         $reviews = $this->findAllEntities(Review::class);
 
+        $randomReview = [];
+
+        if (!empty($reviews)) {
+            $randomReview = $reviews[array_rand($reviews)];
+        }
+
         return $this->render('default/index.html.twig', [
             'page' => 'home',
             'gigs' => $gigs,
             'pastGigs' => $pastGigs,
-            'review' => $reviews[array_rand($reviews)],
+            'review' => $randomReview,
             'articles' => $articles
         ]);
     }
