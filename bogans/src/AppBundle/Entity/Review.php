@@ -65,6 +65,4 @@ class Review
     {
         return $this->url;
     }
-
-
 }
