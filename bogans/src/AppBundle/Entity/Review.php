@@ -65,4 +65,25 @@ class Review
     {
         return $this->url;
     }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function setSource($source)
+    {
+        $this->source = $source;
+    }
+
+    public function setFullText($text)
+    {
+        $this->fullText = $text;
+    }
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 }
+

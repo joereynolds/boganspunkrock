@@ -61,4 +61,24 @@ class Article
     {
         return $this->title;
     }
+
+    public function setImage()
+    {
+        return $this->image;
+    }
+
+    public function setDate()
+    {
+        return $this->date;
+    }
+
+    public function setText()
+    {
+        return $this->text;
+    }
+
+    public function setTitle()
+    {
+        return $this->title;
+    }
 }

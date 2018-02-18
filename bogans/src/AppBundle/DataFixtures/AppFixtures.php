@@ -15,6 +15,23 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $this->fakeGigs($manager);
+        $this->fakeReviews($manager);
+    }
+
+    private function fakeReviews(ObjectManager $manager)
+    {
+        $now = new DateTime();
+
+        for ($i = 0; $i < 20; $i++) {
+            $review = new Review();
+            $review->setSource('with ' . $i);
+            $review->setUrl('http://google.com');
+            $review->setFullText('They were terrible');
+            $review->setTitle('Never Again');
+            $manager->persist($review);
+        }
+
+        $manager->flush();
     }
 
     private function fakeGigs(ObjectManager $manager)
@@ -22,7 +39,7 @@ class AppFixtures extends Fixture
         $now = new DateTime();
         // create 20 products! Bam!
         for ($i = 0; $i < 20; $i++) {
-            $gig= new Gig();
+            $gig = new Gig();
             $gig->setPrefix('with ' . $i);
             $gig->setUrl('http://google.com');
             $gig->setLocation('England');
