@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Pull Bogans') {
       steps {
-        dir(path: '/var/www/staging-boganspunkrockn')
-        sh 'git pull origin master'
+        sh '''cd /var/www/staging-boganspunkrockn
+git pull origin master'''
       }
     }
     stage('Composer install') {
