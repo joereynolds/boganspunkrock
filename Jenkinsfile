@@ -41,8 +41,11 @@ git pull origin master'''
     }
     stage('Run tests') {
       steps {
-        sh '''/home/joe/.composer/vendor/phpunit/phpunit/phpunit
+        dir(path: '/var/www/staging-boganspunkrockn/bogans') {
+          sh '''/home/joe/.composer/vendor/phpunit/phpunit/phpunit
 '''
+        }
+        
       }
     }
   }
