@@ -17,14 +17,20 @@ git pull origin master'''
     }
     stage('Run migrations') {
       steps {
-        sh '''php bin/console doctrine:migrations:migrate
+        dir(path: '/var/www/staging-boganspunkrockn/bogans') {
+          sh '''php bin/console doctrine:migrations:migrate
 '''
+        }
+        
       }
     }
     stage('Clear the cache') {
       steps {
-        sh '''sudo php bin/console cache:clear --env=prod
+        dir(path: '/var/www/staging-boganspunkrockn/bogans') {
+          sh '''php bin/console cache:clear --env=prod
 '''
+        }
+        
       }
     }
     stage('Fix ownership') {
