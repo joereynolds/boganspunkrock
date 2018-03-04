@@ -6,3 +6,9 @@ Bogans
 ```
 ./run.sh
 ```
+
+and then
+
+```
+./after.sh
+```
