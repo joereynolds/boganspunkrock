@@ -14,3 +14,6 @@ docker exec bogans_php_1 php bin/console doctrine:migrations:migrate
 
 # Whilst we're at it, populate the tables with some fake data
 docker exec bogans_php_1 php bin/console doctrine:fixtures:load
+
+# Clear the cache for non-local dev
+docker exec bogans_php_1 php bin/console cache:clear --env=prod
