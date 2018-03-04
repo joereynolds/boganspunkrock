@@ -14,7 +14,5 @@ services:
       context: ./docker/mysql/
       dockerfile: Dockerfile
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: symfony
-
-
