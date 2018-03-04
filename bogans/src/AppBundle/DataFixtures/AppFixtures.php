@@ -37,7 +37,8 @@ class AppFixtures extends Fixture
     private function fakeGigs(ObjectManager $manager)
     {
         $now = new DateTime();
-        // create 20 products! Bam!
+
+        // Gigs in the future
         for ($i = 0; $i < 20; $i++) {
             $gig = new Gig();
             $gig->setPrefix('with ' . $i);
@@ -48,6 +49,18 @@ class AppFixtures extends Fixture
             $manager->persist($gig);
         }
 
+        $past = DateTime::createFromFormat('Y-m-d', '2008-02-05');
+
+        // Gigs in the past
+        for ($i = 0; $i < 4; $i++) {
+            $gig = new Gig();
+            $gig->setPrefix('with ' . $i);
+            $gig->setUrl('http://google.com');
+            $gig->setLocation('England');
+            $gig->setArtist('Metallica');
+            $gig->setDate($past);
+            $manager->persist($gig);
+        }
         $manager->flush();
     }
 }
