@@ -62,23 +62,23 @@ class Article
         return $this->title;
     }
 
-    public function setImage()
+    public function setImage($image)
     {
-        return $this->image;
+        $this->image = $image;
     }
 
-    public function setDate()
+    public function setDate($date)
     {
-        return $this->date;
+        $this->date = $date;
     }
 
-    public function setText()
+    public function setText($text)
     {
-        return $this->text;
+        $this->text = $text;
     }
 
-    public function setTitle()
+    public function setTitle($title)
     {
-        return $this->title;
+        $this->title = $title;
     }
 }

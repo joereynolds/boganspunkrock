@@ -16,6 +16,7 @@ class AppFixtures extends Fixture
     {
         $this->fakeGigs($manager);
         $this->fakeReviews($manager);
+        $this->fakeNews($manager);
     }
 
     private function fakeReviews(ObjectManager $manager)
@@ -29,6 +30,22 @@ class AppFixtures extends Fixture
             $review->setFullText('They were terrible');
             $review->setTitle('Never Again');
             $manager->persist($review);
+        }
+
+        $manager->flush();
+    }
+
+    private function fakeNews(ObjectManager $manager)
+    {
+        $now = new DateTime();
+
+        for ($i = 0; $i < 20; $i++) {
+            $article = new Article();
+            $article->setTitle("Never Again $i");
+            $article->setImage('not-found.jpg');
+            $article->setText('This is just some text for our fixtures');
+            $article->setDate($now);
+            $manager->persist($article);
         }
 
         $manager->flush();
