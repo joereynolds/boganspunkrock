@@ -5,7 +5,6 @@ namespace AppBundle\Repository;
 use DateTime;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityRepository;
-use AppBundle\Entity\Gig as GigEntity;
 
 class Gig extends EntityRepository
 {
