@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Repository\Gig as GigRepository;
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Gig;
 use AppBundle\Entity\Review;
