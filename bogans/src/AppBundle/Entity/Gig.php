@@ -20,14 +20,14 @@ class Gig
 
     /**
      * i.e. "Supporting" or "With" or "Playing with"
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $prefix;
+    private $prefix = null;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $artist;
+    private $artist = null;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -36,9 +36,10 @@ class Gig
 
     /**
      * URL of the artist that is also playing
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $url;
+    private $url = null;
+
     /**
      * @ORM\Column(type="date", length=100)
      */
