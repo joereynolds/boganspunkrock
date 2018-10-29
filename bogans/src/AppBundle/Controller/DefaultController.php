@@ -73,7 +73,7 @@ class DefaultController extends Controller
      */
     public function newsAction()
     {
-        $articles = $this->findAllEntities(Article::class);
+        $articles = $this->findAllEntities(Article::class, ['date' => 'DESC']);
 
         return $this->render('default/index.html.twig', [
             'page' => 'news',
@@ -108,9 +108,9 @@ class DefaultController extends Controller
         ]);
     }
 
-    private function findAllEntities($entity)
+    private function findAllEntities($entity, $orderBy = null)
     {
         $repository = $this->getDoctrine()->getRepository($entity);
-        return $repository->findAll();
+        return $repository->findBy([], $orderBy);
     }
 }
