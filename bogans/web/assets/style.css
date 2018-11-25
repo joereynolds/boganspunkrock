@@ -30,6 +30,8 @@ body {
 
 main {
     flex: 1 0 auto;
+    padding: 1em;
+    background-image: linear-gradient(#7b3e46, #1a1416 10%);
 }
 
 .grid {
@@ -46,12 +48,8 @@ a:hover {
     text-decoration: underline;
 }
 
-main {
-  padding: 1em;
-}
-
 main a {
-    color: #5cff96;
+    color: #cbdbac;
 }
 
 footer,
@@ -63,11 +61,12 @@ header {
 .subtext {
     display: block;
     font-size: .75rem;
-    color: #5cff96;
 }
 
-header nav {
-  padding: 0.5em;
+.nav-header {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 38px;
+    color: #cbdbac;
 }
 
 .nav-container {
@@ -77,14 +76,6 @@ header nav {
   display: flex;
   align-items: center;
 
-}
-
-footer {
-  padding: 1em;
-}
-
-nav {
-  margin: auto;
 }
 
 nav * + * {
@@ -121,48 +112,13 @@ article img {
 }
 
 blockquote {
-    border-left: 2px solid #5cff96;;
+    border-left: 2px solid #7b3e46;
     font-style: italic;
     padding-left: 1em;
 }
 
 blockquote + blockquote {
     margin-top: 1em;
-}
-
-.hero-image {
-    height: 250px;
-    position: relative;
-    background-color: #5cff96;
-}
-
-.hero-image-header {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-}
-.image-collage {
-    opacity: 0.05;
-    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;
-
-}
-
-.image-collage .image {
-    height: 250px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    -webkit-box-flex: 1;   /* OLD - iOS 6-, Safari 3.1-6 */
-    -webkit-flex: 1;       /* Safari 6.1+. iOS 7.1+, BB10 */
-    -ms-flex: 1;           /* IE 10 */
-    flex: 1;               /* NEW, Spec - Firefox, Chrome, Opera */
-
 }
 
 .nav-logo {
@@ -186,11 +142,15 @@ blockquote + blockquote {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.2);
   background-image: url("./black-linen-2.png");
+  background-color: #c93c4f;
   padding: 1em;
-  margin-bottom: .5em;
 }
+
+.card + .card {
+  margin-top: .5em;
+}
+
 
 #loading-spinner {
   right: 0;
@@ -228,3 +188,9 @@ blockquote + blockquote {
   }
 
 }
+
+/**
+ * TODO - Use a variable for the color.
+ *
+ *
+ */
