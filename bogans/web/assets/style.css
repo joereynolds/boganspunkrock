@@ -66,7 +66,6 @@ header {
 .nav-header {
     font-family: 'Alfa Slab One', cursive;
     font-size: 38px;
-    color: #cbdbac;
 }
 
 .nav-container {
@@ -133,6 +132,8 @@ article img {
   background-image: url("./black-linen-2.png");
   background-color: #c93c4f;
   padding: 1em;
+  border: 1px solid #522c31;
+  box-shadow: 1px 2px 5px #522c31;
 }
 
 .card + .card {
@@ -165,9 +166,3 @@ article img {
   }
 
 }
-
-/**
- * TODO - Use a variable for the color.
- *
- *
- */
