@@ -71,7 +71,6 @@ header {
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   display: flex;
   align-items: center;
-
 }
 
 nav * + * {
@@ -105,16 +104,6 @@ article h1 {
 
 article img {
     width: 100%;
-}
-
-blockquote {
-    border-left: 2px solid #7b3e46;
-    font-style: italic;
-    padding-left: 1em;
-}
-
-blockquote + blockquote {
-    margin-top: 1em;
 }
 
 .nav-logo {
@@ -158,19 +147,9 @@ blockquote + blockquote {
     main {
         padding: 2em;
     }
-    /**
-     * crappy hack, use flex to vertically align
-     * and then it'll be in the dom and honour
-     * the width correctly
-     */
-    .hero-image-header {
-        width: 30%;
-        max-width: 560px;
-    }
     .gig-location-details {
         text-align: right;
     }
-
     .subtext {
         float: right;
     }
