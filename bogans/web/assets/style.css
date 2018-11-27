@@ -32,6 +32,7 @@ main {
     flex: 1 0 auto;
     padding: 1em;
     background-image: linear-gradient(#7b3e46, #1a1416 15%);
+    position: relative;
 }
 
 .grid {
@@ -50,7 +51,7 @@ a:hover {
 
 header {
     z-index: 1;
-    box-shadow: 0 5px 10px #562e33;
+    box-shadow: 0 0 10px #562e33;
 }
 footer,
 header {
@@ -113,6 +114,17 @@ article img {
     width: 200px;
 }
 
+.logo-underlay {
+    background-image: url('/assets/hbm.jpg');
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0.05;
+}
+
 .review-source {
     margin-top: .5em;
     font-style: normal;
@@ -133,7 +145,6 @@ article img {
   background-color: #c93c4f;
   padding: 1em;
   border: 1px solid #522c31;
-  box-shadow: 1px 2px 5px #522c31;
 }
 
 .card + .card {

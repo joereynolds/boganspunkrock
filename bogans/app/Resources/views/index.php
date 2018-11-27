@@ -8,7 +8,6 @@
       <main>
         <div class="grid">
           <?php include './pages/home.htm' ?>
-          <?php //include './pages/contact.htm' ?>
         </div>
       </main>
     </body>

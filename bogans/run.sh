@@ -17,7 +17,6 @@ rm -f ./env
 
 echo '+------------------------------------------+'
 echo '|Bogans is now available on port 5678.     |'
-echo '|Once the containers are up, run ./after.sh|'
 echo '|                                          |'
 echo "|MYSQL PASSWORD: $mysql_password              |"
 echo "|You won't see this password again.        |"
