@@ -15,8 +15,8 @@ img {
 html {
   background: #2d2d2d;
   color: white;
-  font-size: 1rem;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
 }
 
 html, body {
@@ -29,7 +29,24 @@ body {
 }
 
 main {
+    background-image: linear-gradient(#7b3e46, #1a1416 15%);
     flex: 1 0 auto;
+    padding: 1em;
+    position: relative;
+    z-index: 0;
+}
+
+main::after {
+    background-image: url('/assets/hbm.jpg');
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0.05;
+    content: '';
+    z-index: -1;
 }
 
 .grid {
@@ -37,7 +54,7 @@ main {
 }
 
 a {
-    color: white;
+    color: #cbdbac;
     text-decoration: none;
     font-weight:bold;
 }
@@ -46,28 +63,19 @@ a:hover {
     text-decoration: underline;
 }
 
-main {
-  padding: 1em;
-}
-
-main a {
-    color: #5cff96;
-}
-
-footer,
 header {
-  background-color: rgba(255, 255, 255, 0.2);
-  background-image: url("./black-linen-2.png");
+    z-index: 1;
+    box-shadow: 0 0 10px #562e33;
 }
 
 .subtext {
     display: block;
     font-size: .75rem;
-    color: #5cff96;
 }
 
-header nav {
-  padding: 0.5em;
+.nav-header {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 38px;
 }
 
 .nav-container {
@@ -76,15 +84,6 @@ header nav {
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   display: flex;
   align-items: center;
-
-}
-
-footer {
-  padding: 1em;
-}
-
-nav {
-  margin: auto;
 }
 
 nav * + * {
@@ -107,8 +106,8 @@ input, textarea {
 }
 
 [type="submit"] {
-    border: none;
     background: rgba(255, 255, 255, 0.2);
+    border: none;
     color: white;
 }
 
@@ -120,60 +119,14 @@ article img {
     width: 100%;
 }
 
-blockquote {
-    border-left: 2px solid #5cff96;;
-    font-style: italic;
-    padding-left: 1em;
-}
-
-blockquote + blockquote {
-    margin-top: 1em;
-}
-
-.hero-image {
-    height: 250px;
-    position: relative;
-    background-color: #5cff96;
-}
-
-.hero-image-header {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-}
-.image-collage {
-    opacity: 0.05;
-    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;
-
-}
-
-.image-collage .image {
-    height: 250px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    -webkit-box-flex: 1;   /* OLD - iOS 6-, Safari 3.1-6 */
-    -webkit-flex: 1;       /* Safari 6.1+. iOS 7.1+, BB10 */
-    -ms-flex: 1;           /* IE 10 */
-    flex: 1;               /* NEW, Spec - Firefox, Chrome, Opera */
-
-}
-
 .nav-logo {
-    border-radius: 50px;
-    width: 50px;
+    width: 120px;
 }
 
 .review-source {
-    margin-top: .5em;
     font-style: normal;
     font-weight: bold;
+    margin-top: .5em;
 }
 
 .review-home {
@@ -186,39 +139,36 @@ blockquote + blockquote {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #c93c4f;
   background-image: url("./black-linen-2.png");
+  border: 1px solid #522c31;
   padding: 1em;
-  margin-bottom: .5em;
+}
+
+.card + .card {
+  margin-top: .5em;
 }
 
 #loading-spinner {
-  right: 0;
-  left: 0;
   bottom: 50%;
-  position: absolute;
+  left: 0;
   margin: auto;
+  position: absolute;
+  right: 0;
 }
 
 @media (min-width: 768px) {
     main {
         padding: 2em;
     }
-    /**
-     * crappy hack, use flex to vertically align
-     * and then it'll be in the dom and honour
-     * the width correctly
-     */
-    .hero-image-header {
-        width: 30%;
-        max-width: 560px;
-    }
     .gig-location-details {
         text-align: right;
     }
-
     .subtext {
         float: right;
+    }
+    .nav-logo {
+        width: 200px;
     }
 }
 
