@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: ./infrastructure/docker/php-apache/
+      dockerfile: Dockerfile
+    ports:
+      - "5678:80"
+    volumes:
+      - .:/var/www/html
+  database:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bogans
+    # volumes:
+    #   - db-data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder
+      # to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
