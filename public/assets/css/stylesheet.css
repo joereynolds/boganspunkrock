@@ -19,7 +19,8 @@ time, audio, video {
 }
 
 :root {
-  --color-primary: #a90000;
+  --color-primary: #ff8585;
+  --spacing: 15px;
 }
 
 body {
@@ -46,8 +47,12 @@ h2 {
     font-size: 5rem;
 }
 
+a + a {
+    margin-left: var(--spacing);
+}
+
 .gig {
-    padding: 15px;
+    padding: var(--spacing);
     border:1px solid #fff;
     display: flex;
 }
@@ -57,7 +62,7 @@ h2 {
 }
 
 .gig + .gig {
-    margin-top: 15px;
+    margin-top: var(--spacing);
 }
 
 .gig__venue {
@@ -86,5 +91,6 @@ h2 {
 
 .hero__title {
   font-size: 10rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: var(--spacing);
 }
-
