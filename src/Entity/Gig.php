@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,4 +43,29 @@ class Gig
      * @ORM\Column(type="datetime")
      */
     private $date;
+
+    public function getDate(): DateTime
+    {
+        return $this->date;
+    }
+
+    public function getPrefix(): string
+    {
+        return $this->prefix;
+    }
+
+    public function getWebLink(): string
+    {
+        return $this->webLink;
+    }
+
+    public function getVenue(): string
+    {
+        return $this->venue;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

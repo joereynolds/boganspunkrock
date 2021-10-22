@@ -1,0 +1,90 @@
+
+/* Reset */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a, 
+dl, dt, dd, ol, ul, li,
+article, aside, canvas, details, embed, 
+footer, header, menu, nav, section, 
+time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #a90000;
+}
+
+body {
+  font-family: 'Andada Pro', serif;
+  background: black;
+  color: #fff;
+}
+
+header, footer, main {
+    padding: 25px;
+    width: 800px;
+    margin: auto;
+}
+
+a, h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+}
+
+h1 { 
+    font-size: 10rem;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+.gig {
+    padding: 15px;
+    border:1px solid #fff;
+    display: flex;
+}
+
+.gig > * {
+    flex:1;
+}
+
+.gig + .gig {
+    margin-top: 15px;
+}
+
+.gig__venue {
+    text-align: right;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  background-image: url('../images/bogans.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:75vh;
+  z-index: -1;
+}
+
+.hero {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__title {
+  font-size: 10rem;
+}
+

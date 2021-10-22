@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section>
+        <h2>Gigs</h2>
+        {% for gig in gigs %}
+            <div class="gig">
+                <time class="gig__time">
+                    {{ gig.date | date }}
+                </time>
+
+                <div class="gig__details">
+                    {{ gig.prefix }} <a href="{{ gig.webLink }}"> {{gig.name}}</a>
+                </div>
+
+                <div class="gig__venue">
+                    {{ gig.venue }}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}
+

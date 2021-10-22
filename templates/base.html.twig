@@ -2,18 +2,40 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="./assets/css/stylesheet.css">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;800&display=swap" rel="stylesheet">
     </head>
+
+
     <body>
-        {% block body %}{% endblock %}
+
+        <!-- Put this into its own file -->
+        <div class="hero">
+            <h1 class="hero__title">
+                Bogans
+            </div>
+        </div>
+
+        <header>
+            <nav>
+                <a href="#">Contact</a>
+                <a href="#">Merch</a>
+                <a href="#">Gallery</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            <nav>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Youtube</a>
+            </nav>
     </body>
 </html>
