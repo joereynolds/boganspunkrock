@@ -1,8 +1,8 @@
 docker-compose down
 docker-compose rm -v
 
-docker-compose up
+docker-compose up --force-recreate --build
 
-./console.sh doctrine:migrations:migrate
 
-echo 'bogans is now available on localhost:5678'
+# change this to a docker healthcheck
+echo 'Once containers are up, run ./after.sh'

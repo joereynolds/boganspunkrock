@@ -31,7 +31,6 @@ body {
 
 header, footer, main {
     padding: 25px;
-    width: 800px;
     margin: auto;
 }
 
@@ -39,12 +38,16 @@ a, h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 h1 { 
-    font-size: 10rem;
+    font-size: 5rem;
 }
 
 h2 {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 a + a {
@@ -69,28 +72,6 @@ a + a {
     text-align: right;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: block;
-  background-image: url('../images/bogans.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height:75vh;
-  z-index: -1;
-}
-
 .hero {
-  height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__title {
-  font-size: 10rem;
-  background: rgba(255, 255, 255, 0.2);
-  padding: var(--spacing);
+    width: 100%;
 }
