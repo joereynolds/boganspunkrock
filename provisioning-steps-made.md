@@ -1,0 +1,4 @@
+- Create www directory
+- Generate an SSH key and upload to github
+- Clone bogans repo
+- Install docker-compose (apt install docker-compose)
