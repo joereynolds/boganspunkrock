@@ -40,14 +40,19 @@ footer, header {
 
 header a, footer a {
     color: white;
+    font-weight: bold;
 }
 
 a, h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
-a:hover {
+a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 h2 {
