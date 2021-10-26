@@ -7,7 +7,7 @@
         {% for gig in gigs %}
             <div class="gig">
                 <time class="gig__time">
-                    {{ gig.date | date }}
+                    {{ gig.date | date("D jS M Y") }}
                 </time>
 
                 <div class="gig__details">

@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
@@ -19,6 +20,7 @@ class HomeController extends AbstractController
         $this->gigRepository = $em->getRepository('App\Entity\Gig');
     }
 
+    #[Route('/')]
     public function index(): Response
     {
         return $this->render(

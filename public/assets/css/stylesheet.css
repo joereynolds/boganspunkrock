@@ -34,6 +34,14 @@ header, footer, main {
     margin: auto;
 }
 
+footer, header {
+    background: var(--color-primary);
+}
+
+header a, footer a {
+    color: white;
+}
+
 a, h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
