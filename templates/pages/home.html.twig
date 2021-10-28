@@ -11,13 +11,22 @@
                 </time>
 
                 <div class="gig__details">
-                    {{ gig.prefix }} <a href="{{ gig.webLink }}"> {{gig.name}}</a>
+                    {{ gig.prefix }}
+                    {% if gig.webLink %}
+                        <a href="{{ gig.webLink }}"> {{gig.name}}</a>
+                    {% else %}
+                        {{gig.name}}
+                    {% endif %}
                 </div>
 
                 <div class="gig__venue">
                     {{ gig.venue }}
                 </div>
             </div>
+        {% else %}
+            <p>
+        There are currently no gigs lined up, why not <a href="/contact">book us</a>
+            </p>
         {% endfor %}
     </section>
 
