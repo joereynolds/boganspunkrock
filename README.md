@@ -14,7 +14,13 @@ If you want some fixture data, run `./after.sh` once the containers are up
 
 Digital ocean is the VPS and AWS S3 for storage.
 
+
 ```
+cd infrastructure/terraform
+terraform init
+
+... Do your changes
+
 terraform plan
 terraform apply
 ```
