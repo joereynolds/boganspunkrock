@@ -34,7 +34,7 @@ final class GalleryController extends AbstractController
 
         // TODO - create a Gallery object (name, and images)
         $candidGallery = [
-            'name' => 'Our Rehearsal Space',
+            'name' => 'Rehearsing',
             'images' => $candidImages->get('Contents')
         ];
 

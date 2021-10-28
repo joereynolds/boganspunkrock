@@ -100,15 +100,15 @@ a + a {
 }
 
 .gig > * {
-    flex:1;
+  flex:1;
 }
 
 .gig + .gig {
-    margin-top: var(--spacing);
+  margin-top: var(--spacing);
 }
 
 .gig__venue {
-    text-align: right;
+  text-align: right;
 }
 
 .hero {
@@ -125,3 +125,10 @@ a + a {
 .plug__link {
   font-weight: bold;
 }
+
+.gallery__images {
+  display: flex;
+  flex-direction: column;
+}
+
+

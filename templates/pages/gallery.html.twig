@@ -6,15 +6,16 @@
         <h2 class="title">Gallery</h2>
 
         {% for gallery in galleries %}
-            <div>
+            <div class="gallery">
                 <h2 class="title">{{ gallery['name'] }}</h2>
 
-                {% for image in gallery['images'] %}
-                    {% if image['Key'] ends with '.jpg' %}
-                        <img src="//{{s3Url}}{{image['Key']}}"/>
-                    {% endif %}
-                {% endfor %}
-
+                <div class="gallery__images">
+                    {% for image in gallery['images'] %}
+                        {% if image['Key'] ends with '.jpg' %}
+                            <img class="gallery__image" src="//{{s3Url}}{{image['Key']}}"/>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
 
         {% endfor %}
