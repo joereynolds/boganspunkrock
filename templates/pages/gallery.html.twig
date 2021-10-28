@@ -5,6 +5,19 @@
     <section>
         <h2 class="title">Gallery</h2>
 
+        <div>
+            <a href="">Rehearsals</a>
+        </div>
+
+        <div>
+            <a href="">Outpost 2021-10-02</a>
+        </div>
+
+        <div>
+            <a href="">Promo shots</a>
+        </div>
+
+        {#
         {% for gallery in galleries %}
             <div class="gallery">
                 <h2 class="title">{{ gallery['name'] }}</h2>
@@ -19,7 +32,7 @@
             </div>
 
         {% endfor %}
+        #}
     </section>
 
 {% endblock %}
-
