@@ -4,12 +4,9 @@ The source code for [bogansband.com](bogansband.com) (Not currently live, be pat
 
 ## Installing
 
-1. Clone the repository
+1. Clone the repository and run `./run.sh`
 
-2. Install required packages
-```
-docker run --rm --interactive --tty --volume $PWD:/app composer install
-```
+If you want some fixture data, run `./after.sh` once the containers are up
 
 ## Infrastructure
 
