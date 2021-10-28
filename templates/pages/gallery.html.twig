@@ -4,6 +4,20 @@
 
     <section>
         <h2 class="title">Gallery</h2>
+
+        {% for gallery in galleries %}
+            <div>
+                <h2 class="title">{{ gallery['name'] }}</h2>
+
+                {% for image in gallery['images'] %}
+                    {% if image['Key'] ends with '.jpg' %}
+                        <img src="//{{s3Url}}{{image['Key']}}"/>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+        {% endfor %}
     </section>
 
 {% endblock %}
