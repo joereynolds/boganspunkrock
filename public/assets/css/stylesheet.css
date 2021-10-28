@@ -2,8 +2,8 @@
 /* Reset */
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, p, a,
-dl, dt, dd, ol, ul, li,
-article, aside, canvas, details, embed,
+dl, dt, ol, ul, li,
+article, aside, details, embed,
 footer, header, menu, nav, section,
 time, audio, video {
   margin: 0;
@@ -20,6 +20,8 @@ time, audio, video {
 
 :root {
   --color-primary: #ff8585;
+  --color-secondary: #4f805d;
+  --color-dull: #777;
   --spacing: 15px;
 }
 
@@ -66,14 +68,17 @@ a:hover {
 }
 
 h2 {
+    font-size: 2rem;
+}
+
+.title {
     display: inline-block;
     position: relative;
-    font-size: 2rem;
     color: white;
     margin-bottom: var(--spacing);
 }
 
-h2:after {
+.title:after {
     position:absolute;
     content: '';
     background: var(--color-primary);
@@ -107,5 +112,16 @@ a + a {
 }
 
 .hero {
-    width: 100%;
+  width: 100%;
+}
+
+.plug {
+  background: var(--color-dull);
+  padding: var(--spacing);
+  text-align: right;
+  color: black;
+}
+
+.plug__link {
+  font-weight: bold;
 }
