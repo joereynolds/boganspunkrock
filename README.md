@@ -33,8 +33,3 @@ The easiest way is with the CLI
 ```
 aws s3 cp your-file.png s3://bogans-storage-bucket/images/
 ```
-
-
-
-
-
