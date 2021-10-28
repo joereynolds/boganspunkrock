@@ -48,12 +48,12 @@ class Gig
         return $this->date;
     }
 
-    public function getPrefix(): string
+    public function getPrefix(): ?string
     {
         return $this->prefix;
     }
 
-    public function getWebLink(): string
+    public function getWebLink(): ?string
     {
         return $this->webLink;
     }
