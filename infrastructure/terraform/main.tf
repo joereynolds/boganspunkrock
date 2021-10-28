@@ -50,3 +50,18 @@ resource "aws_s3_bucket_object" "object" {
   bucket = "${aws_s3_bucket.bogans_bucket.id}"
   key    = "images/"
 }
+
+resource "aws_s3_bucket_object" "object_2" {
+  bucket = "${aws_s3_bucket.bogans_bucket.id}"
+  key    = "images/outpost-2021-10-02/"
+}
+
+resource "aws_s3_bucket_object" "object_3" {
+  bucket = "${aws_s3_bucket.bogans_bucket.id}"
+  key    = "images/promo/"
+}
+
+resource "aws_s3_bucket_object" "object_4" {
+  bucket = "${aws_s3_bucket.bogans_bucket.id}"
+  key    = "images/doc/"
+}
