@@ -3,36 +3,27 @@
 {% block body %}
 
     <section>
-        <h2 class="title">Gallery</h2>
+        <h2 class="title">{{ title }}</h2>
 
-        <div>
-            <a href="">Rehearsals</a>
-        </div>
-
-        <div>
-            <a href="">Outpost 2021-10-02</a>
-        </div>
-
-        <div>
-            <a href="">Promo shots</a>
-        </div>
-
-        {#
-        {% for gallery in galleries %}
+        {% for image in images %}
             <div class="gallery">
-                <h2 class="title">{{ gallery['name'] }}</h2>
-
                 <div class="gallery__images">
-                    {% for image in gallery['images'] %}
-                        {% if image['Key'] ends with '.jpg' %}
-                            <img class="gallery__image" src="//{{s3Url}}{{image['Key']}}"/>
-                        {% endif %}
-                    {% endfor %}
+                    {% if image['Key'] ends with '.jpg' %}
+                        <img class="gallery__image" src="//{{s3Url}}{{image['Key']}}"/>
+                    {% endif %}
                 </div>
             </div>
-
+        {% else %}
+            <p>
+                There aren't any images in this gallery.
+                Why not go
+                    <a
+                        href="/gallery">
+                        back to the gallery page
+                    </a>
+                and try a different one?
+            </p>
         {% endfor %}
-        #}
     </section>
 
 {% endblock %}

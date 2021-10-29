@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Aws\S3\S3Client;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,26 +24,42 @@ final class GalleryController extends AbstractController
         $this->client = $client;
     }
 
-    #[Route('/gallery', name: 'gallery')]
+    #[Route('/gallery', name: 'gallery_index')]
     public function index(): Response
     {
-        $candidImages = $this->client->listObjectsV2([
+        $s3Objects = $this->client->listObjectsV2([
             'Bucket' => self::BUCKET,
-            'Prefix' => 'images/doc',
-            'MaxKeys' => 5
-        ]);
+            'Prefix' => 'images/',
+            'MaxKeys' => 5,
+            'Delimiter' => '/'
+        ])->get('CommonPrefixes');
 
-        // TODO - create a Gallery object (name, and images)
-        $candidGallery = [
-            'name' => 'Rehearsing',
-            'images' => $candidImages->get('Contents')
-        ];
+        return $this->render(
+            'pages/gallery-index.html.twig',
+            [
+                's3Url' => self::S3_BASE_URL,
+                'galleries' => $s3Objects
+            ]
+        );
+    }
+
+    #[Route('/gallery/show', name: 'gallery')]
+    public function show(Request $request): Response
+    {
+        $name = $request->get('name');
+
+        $images = $this->client->listObjectsV2([
+            'Bucket' => self::BUCKET,
+            'Prefix' => $name,
+            'MaxKeys' => 15,
+        ])->get('Contents');
 
         return $this->render(
             'pages/gallery.html.twig',
             [
                 's3Url' => self::S3_BASE_URL,
-                'galleries' => [$candidGallery]
+                'title' => $name,
+                'images' => $images
             ]
         );
     }

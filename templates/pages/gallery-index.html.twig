@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section>
+        <h2 class="title">Gallery</h2>
+
+        {% for gallery in galleries %}
+            <div>
+                <a
+                    href="/gallery/show?name={{ gallery['Prefix'] }}"
+                >
+                    {{ gallery['Prefix'] }}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}
