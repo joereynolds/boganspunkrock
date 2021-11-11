@@ -30,5 +30,28 @@
         {% endfor %}
     </section>
 
+    <section>
+        <h2 class="title">Past Gigs</h2>
+        {% for gig in pastGigs %}
+            <div class="gig">
+                <time class="gig__time">
+                    {{ gig.date | date("D jS M Y") }}
+                </time>
+
+                <div class="gig__details">
+                    {{ gig.prefix }}
+                    {% if gig.webLink %}
+                        <a href="{{ gig.webLink }}"> {{gig.name}}</a>
+                    {% else %}
+                        {{gig.name}}
+                    {% endif %}
+                </div>
+
+                <div class="gig__venue">
+                    {{ gig.venue }}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
 {% endblock %}
 

@@ -10,6 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    private const GIG_LIMIT = 5;
+
     /**
      * @var ObjectRepository
      */
@@ -26,7 +28,8 @@ class HomeController extends AbstractController
         return $this->render(
             'pages/home.html.twig',
             [
-                'gigs' => $this->gigRepository->findAll()
+                'gigs' => $this->gigRepository->findUpcomingGigs(),
+                'pastGigs' => $this->gigRepository->findPastGigs(self::GIG_LIMIT)
             ]
         );
     }
