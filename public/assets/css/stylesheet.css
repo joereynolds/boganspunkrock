@@ -131,4 +131,13 @@ a + a {
   flex-direction: column;
 }
 
+/**
+ * Desktop
+ */
+@media only screen and (min-width: 768px) {
+    .hero, main, nav {
+        width: 800px;
+        margin: auto;
+    }
+}
 
