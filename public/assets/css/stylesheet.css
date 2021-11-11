@@ -71,6 +71,10 @@ h2 {
     font-size: 2rem;
 }
 
+section + section {
+    margin-top: var(--spacing);
+}
+
 .title {
     display: inline-block;
     position: relative;
@@ -140,4 +144,3 @@ a + a {
         margin: auto;
     }
 }
-

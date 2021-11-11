@@ -12,7 +12,7 @@ final class GalleryController extends AbstractController
 {
     const BUCKET = 'bogans-storage-bucket';
 
-    const S3_BASE_URL = self::BUCKET . '.s3.eu-west-2.amazonaws.com/';
+    const IMAGE_BASE_URL = 'https://d22s1r24fvdnoc.cloudfront.net/';
 
     /**
      * @var S3Client
@@ -37,7 +37,7 @@ final class GalleryController extends AbstractController
         return $this->render(
             'pages/gallery-index.html.twig',
             [
-                's3Url' => self::S3_BASE_URL,
+                's3Url' => self::IMAGE_BASE_URL,
                 'galleries' => $s3Objects
             ]
         );
@@ -57,7 +57,7 @@ final class GalleryController extends AbstractController
         return $this->render(
             'pages/gallery.html.twig',
             [
-                's3Url' => self::S3_BASE_URL,
+                'imageBaseUrl' => self::IMAGE_BASE_URL,
                 'title' => $name,
                 'images' => $images
             ]

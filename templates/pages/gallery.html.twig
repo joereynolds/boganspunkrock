@@ -5,15 +5,14 @@
     <section>
         <h2 class="title">{{ title }}</h2>
 
-        {% for image in images %}
-            <div class="gallery">
-                <div class="gallery__images">
+        <div class="gallery">
+            <div class="gallery__images">
+                {% for image in images %}
                     {% if image['Key'] ends with '.jpg' %}
-                        <img class="gallery__image" src="//{{s3Url}}{{image['Key']}}"/>
+                        <img class="gallery__image" src="{{imageBaseUrl}}{{image['Key']}}"/>
                     {% endif %}
-                </div>
+                {% else %}
             </div>
-        {% else %}
             <p>
                 There aren't any images in this gallery.
                 Why not go
@@ -23,7 +22,8 @@
                     </a>
                 and try a different one?
             </p>
-        {% endfor %}
+                {% endfor %}
+        </div>
     </section>
 
 {% endblock %}

@@ -12,7 +12,7 @@ If you want some fixture data, run `./after.sh` once the containers are up
 
 (Most) infrastructure is managed via Terraform.
 
-Digital ocean is the VPS and AWS S3 for storage.
+Digital ocean is the VPS and AWS S3 for storage. S3 sits behind Cloudfront which we use so we don't hammer S3.
 
 
 ```
