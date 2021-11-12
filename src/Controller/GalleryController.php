@@ -12,7 +12,7 @@ final class GalleryController extends AbstractController
 {
     const BUCKET = 'bogans-storage-bucket';
 
-    const IMAGE_BASE_URL = 'https://d22s1r24fvdnoc.cloudfront.net/';
+    const IMAGE_BASE_URL = 'https://d3fd096igel8cg.cloudfront.net/';
 
     /**
      * @var S3Client
