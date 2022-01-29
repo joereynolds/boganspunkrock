@@ -20,6 +20,14 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
             - '../src/Tests/'
+    Aws\DynamoDb\DynamoDbClient:
+      arguments:
+        -
+          version: '2012-08-10'
+          region: 'eu-west-2'
+          credentials:
+             key: '%env(AWS_ACCESS_KEY)%'
+             secret: '%env(AWS_ACCESS_SECRET)%'
 
     Aws\S3\S3Client:
       arguments:

@@ -42,6 +42,17 @@ resource "aws_dynamodb_table" "bogans_terraform_lock_db" {
   }
 }
 
+resource "aws_dynamodb_table" "bogans_terraform_test_table" {
+  name = "bogans-terraform-test-table"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key = "UserId"
+
+  attribute {
+    name = "UserId"
+    type = "S"
+  }
+}
+
 resource "aws_s3_bucket" "bogans_bucket" {
   bucket = "bogans-storage-bucket"
 }
