@@ -17,7 +17,8 @@ Digital ocean is the VPS and AWS S3 for storage. S3 sits behind Cloudfront which
 
 ```
 cd infrastructure/terraform
-terraform init
+terraform init -backend-config="access_key=your-key" -backend-config="secret_key=your-key"
+
 
 ... Do your changes
 
